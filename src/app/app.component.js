@@ -9,25 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var hide_service_1 = require('./hike/hide.service');
+// tslint:disable-next-line:no-unused-variable
 var AppComponent = (function () {
-    function AppComponent(_hikeService) {
-        this._hikeService = _hikeService;
+    function AppComponent() {
     }
-    AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        // this.hikes = this._hikeService.getHikes();
-        this._hikeService.getHikesFromApi()
-            .subscribe(function (res) { return _this.hikes = res; }, function (error) { return console.error(error.status); });
-        console.log(this.hikes);
-    };
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
             templateUrl: 'app.component.html',
         }), 
-        __metadata('design:paramtypes', [hide_service_1.HikeService])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
