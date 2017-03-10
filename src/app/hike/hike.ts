@@ -1,4 +1,5 @@
 export class Hike {
+	id: number;
 	name: string;
 	area: string;
 	region: string;

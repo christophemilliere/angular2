@@ -9,27 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-// import { Hike } from './hike';
-require('rxjs/add/operator/map');
-require('rxjs/add/operator/do');
-var HikeService = (function () {
-    function HikeService(_http) {
-        this._http = _http;
+var router_1 = require('@angular/router');
+var HikeDetailsComponent = (function () {
+    function HikeDetailsComponent(_route) {
+        this._route = _route;
     }
-    // getHikes(){
-    //  return this.hikes; 
-    // }
-    HikeService.prototype.getHikesFromApi = function () {
-        return this._http.get('app/api/hikes.json')
-            .do(function (x) { return console.log(x); })
-            .map(function (hikes) { return hikes.json(); });
+    HikeDetailsComponent.prototype.ngOnInit = function () {
+        var id = this._route.snapshot.params['id'];
+        this.title = "D\u00E9tail de la rando pour l'id: " + id;
     };
-    HikeService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], HikeService);
-    return HikeService;
+    HikeDetailsComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'hike-details',
+            templateUrl: 'hike-details.component.html'
+        }), 
+        __metadata('design:paramtypes', [router_1.ActivatedRoute])
+    ], HikeDetailsComponent);
+    return HikeDetailsComponent;
 }());
-exports.HikeService = HikeService;
-//# sourceMappingURL=hide.service.js.map
+exports.HikeDetailsComponent = HikeDetailsComponent;
+//# sourceMappingURL=hike-details.component.js.map

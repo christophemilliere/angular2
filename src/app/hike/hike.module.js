@@ -8,17 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var hike_list_component_1 = require('./hike-list.component');
+var hike_details_component_1 = require('./hike-details.component');
 var hide_service_1 = require('./hide.service');
 var HikeModule = (function () {
     function HikeModule() {
     }
     HikeModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule],
-            declarations: [hike_list_component_1.HikeListComponent],
+            imports: [common_1.CommonModule, router_1.RouterModule],
+            declarations: [hike_list_component_1.HikeListComponent, hike_details_component_1.HikeDetailsComponent],
             exports: [hike_list_component_1.HikeListComponent],
             providers: [hide_service_1.HikeService]
         }), 

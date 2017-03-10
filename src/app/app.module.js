@@ -17,6 +17,7 @@ var app_component_1 = require('./app.component');
 var hike_module_1 = require('./hike/hike.module');
 var home_component_1 = require('./home/home.component');
 var hike_list_component_1 = require('./hike/hike-list.component');
+var hike_details_component_1 = require('./hike/hike-details.component');
 var page_not_found_component_1 = require('./page-not-found.component');
 var AppModule = (function () {
     function AppModule() {
@@ -30,6 +31,7 @@ var AppModule = (function () {
                 router_1.RouterModule.forRoot([
                     { path: 'home', component: home_component_1.HomeComponent },
                     { path: 'hikes', component: hike_list_component_1.HikeListComponent },
+                    { path: 'hikes/:id', component: hike_details_component_1.HikeDetailsComponent },
                     { path: '', redirectTo: 'home', pathMatch: 'full' },
                     { path: '**', component: page_not_found_component_1.PageNotFoundComponent }
                 ])],
