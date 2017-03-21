@@ -1,4 +1,4 @@
 <h2> Liste des randonnéés</h2>
 <div *ngFor="let hike of hikes" >
-    <a [routerLink]="['/hikes',hike.id]">{{hike.name}}</a>
+    <a [routerLink]="['/hikes',hike.id]">{{hike.name | uppercase}}</a>
 </div>
