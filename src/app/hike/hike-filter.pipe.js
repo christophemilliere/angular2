@@ -8,26 +8,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var forms_1 = require('@angular/forms');
-var hike_list_component_1 = require('./hike-list.component');
-var hike_details_component_1 = require('./hike-details.component');
-var hide_service_1 = require('./hide.service');
-var HikeModule = (function () {
-    function HikeModule() {
+var hike_1 = require('./hike');
+var HikeFilterPipe = (function () {
+    function HikeFilterPipe() {
     }
-    HikeModule = __decorate([
-        core_1.NgModule({
-            imports: [common_1.CommonModule, router_1.RouterModule, forms_1.FormsModule],
-            declarations: [hike_list_component_1.HikeListComponent, hike_details_component_1.HikeDetailsComponent],
-            exports: [hike_list_component_1.HikeListComponent],
-            providers: [hide_service_1.HikeService]
+    HikeFilterPipe.prototype.transform = function (value, searchTerm) {
+        if (searchTerm !== "") {
+            var result = value.filter(hike, hike_1.Hike);
+            hike.description.toLowerCase().include(searchTerm);
+            ;
+        }
+        else {
+            return value;
+        }
+    };
+    HikeFilterPipe = __decorate([
+        core_1.Pipe({
+            name: 'hikeFilter'
         }), 
         __metadata('design:paramtypes', [])
-    ], HikeModule);
-    return HikeModule;
+    ], HikeFilterPipe);
+    return HikeFilterPipe;
 }());
-exports.HikeModule = HikeModule;
-//# sourceMappingURL=hike.module.js.map
+exports.HikeFilterPipe = HikeFilterPipe;
+//# sourceMappingURL=hike-filter.pipe.js.map
