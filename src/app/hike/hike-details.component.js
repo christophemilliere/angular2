@@ -11,12 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var HikeDetailsComponent = (function () {
-    function HikeDetailsComponent(_route) {
+    function HikeDetailsComponent(_route, _router) {
         this._route = _route;
+        this._router = _router;
     }
     HikeDetailsComponent.prototype.ngOnInit = function () {
         var id = this._route.snapshot.params['id'];
         this.title = "D\u00E9tail de la rando pour l'id: " + id;
+    };
+    HikeDetailsComponent.prototype.goBack = function () {
+        this._router.navigate(['/hikes']);
     };
     HikeDetailsComponent = __decorate([
         core_1.Component({
@@ -24,7 +28,7 @@ var HikeDetailsComponent = (function () {
             selector: 'hike-details',
             templateUrl: 'hike-details.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
     ], HikeDetailsComponent);
     return HikeDetailsComponent;
 }());
