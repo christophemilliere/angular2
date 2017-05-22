@@ -8,27 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
-var hike_list_component_1 = require('./hike-list.component');
-var hike_details_component_1 = require('./hike-details.component');
-var hide_service_1 = require('./hide.service');
-var hike_filter_pipe_1 = require('./hike-filter.pipe');
-var HikeModule = (function () {
-    function HikeModule() {
+var contact_us_component_1 = require('./contact-us.component');
+var ContactModule = (function () {
+    function ContactModule() {
     }
-    HikeModule = __decorate([
+    ContactModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule, router_1.RouterModule, forms_1.FormsModule],
-            declarations: [hike_list_component_1.HikeListComponent, hike_details_component_1.HikeDetailsComponent, hike_filter_pipe_1.HikeFilterPipe],
-            exports: [hike_list_component_1.HikeListComponent],
-            providers: [hide_service_1.HikeService]
+            imports: [common_1.CommonModule, forms_1.FormsModule],
+            declarations: [contact_us_component_1.ContactUsComponent],
+            exports: [contact_us_component_1.ContactUsComponent],
+            providers: []
         }), 
         __metadata('design:paramtypes', [])
-    ], HikeModule);
-    return HikeModule;
+    ], ContactModule);
+    return ContactModule;
 }());
-exports.HikeModule = HikeModule;
-//# sourceMappingURL=hike.module.js.map
+exports.ContactModule = ContactModule;
+//# sourceMappingURL=contact.module.js.map

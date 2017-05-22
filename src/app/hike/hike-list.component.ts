@@ -10,6 +10,7 @@ import { HikeService } from './hide.service';
 })
 export class HikeListComponent {
   hikes: Hike[];
+  searchTerm: string;
 
   constructor(private _hikeService: HikeService){
     
