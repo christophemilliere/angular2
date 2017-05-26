@@ -16,12 +16,15 @@ export class HikeListComponent {
     
   }
   ngOnInit() {
-    // this.hikes = this._hikeService.getHikes();
     this._hikeService.getHikesFromApi()
                         .subscribe(
                           res   => this.hikes = res,
                           error => console.error(error.status)
                         )
     console.log(this.hikes);
+  }
+
+  addToMyTodoHike(hikeToAdd: Hike){
+    console.log(hikeToAdd)
   }
 }

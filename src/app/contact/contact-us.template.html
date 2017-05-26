@@ -1,18 +1,19 @@
 <div class="container"> 
   <h2> Contacter nous </h2>
-  <form #form="ngForm" novalidate>
-    <div class="form-group">
-      <label for="subjject">Sujet</label>
+  <form #form="ngForm" (submit)="sendMessage(form)" novalidate>
+    <div class="form-group" [class.has-error]="msgSubject.invalid && msgSubject.touched">
+      <label for="subject" class="control-label">Sujet</label>
       <input  id="subject"  #msgSubject="ngModel" required ngModel name="subject" type="text" class="form-control"  placeholder="Sujet"/>
+      <div *ngIf="msgSubject.invalid && msgSubject.touched">Sujet manquants</div>
     </div>
 
     <div class="form-group">
-      <label for="message">Message</label>
-      <textarea  id="message" ngModel name="message" type="text" class="form-control"  placeholder="Ajouter un message"> </textarea>
+      <label for="message" class="control-label" >Message</label>
+      <textarea  id="message"  required ngModel name="message" type="text" class="form-control"  placeholder="Ajouter un message"> </textarea>
     </div>
 
     <div class="form-group">
-      <label for="service">Service</label>
+      <label for="service" class="control-label">Service</label>
       <select id="service"  ngModel name="service" class="form-control"> 
         <option value="tech">Technique</option>
         <option value="sales">Commercial</option>
@@ -20,11 +21,11 @@
       </select>   
     </div>
 
-    <button type="submit" class="btn btn-default">Envoyer</button>
+    <button type="submit" class="btn btn-default" [disabled]="form.invalid">Envoyer</button>
   </form>
 
 </div>
 <pre>
-  form :{{form.value | json }}
+  form :{{form.valid | json }}
   subject :{{msgSubject.valid}}
 </pre>

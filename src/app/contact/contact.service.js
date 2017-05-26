@@ -9,23 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var contact_service_1 = require('./contact.service');
-var ContactUsComponent = (function () {
-    function ContactUsComponent(_contactService) {
-        this._contactService = _contactService;
-        this.isVisible = false;
+var ContactService = (function () {
+    function ContactService() {
     }
-    ContactUsComponent.prototype.sendMessage = function (form) {
-        this._contactService.postContactForm(form.value);
+    ContactService.prototype.postContactForm = function (contactForm) {
+        console.log(contactForm);
     };
-    ContactUsComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            templateUrl: 'contact-us.template.html'
-        }), 
-        __metadata('design:paramtypes', [contact_service_1.ContactService])
-    ], ContactUsComponent);
-    return ContactUsComponent;
+    ContactService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], ContactService);
+    return ContactService;
 }());
-exports.ContactUsComponent = ContactUsComponent;
-//# sourceMappingURL=contact-us.component.js.map
+exports.ContactService = ContactService;
+//# sourceMappingURL=contact.service.js.map

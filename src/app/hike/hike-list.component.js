@@ -16,10 +16,12 @@ var HikeListComponent = (function () {
     }
     HikeListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        // this.hikes = this._hikeService.getHikes();
         this._hikeService.getHikesFromApi()
             .subscribe(function (res) { return _this.hikes = res; }, function (error) { return console.error(error.status); });
         console.log(this.hikes);
+    };
+    HikeListComponent.prototype.addToMyTodoHike = function (hikeToAdd) {
+        console.log(hikeToAdd);
     };
     HikeListComponent = __decorate([
         core_1.Component({

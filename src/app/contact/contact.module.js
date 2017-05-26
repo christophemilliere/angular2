@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var contact_us_component_1 = require('./contact-us.component');
+var contact_service_1 = require('./contact.service');
 var ContactModule = (function () {
     function ContactModule() {
     }
@@ -20,7 +21,7 @@ var ContactModule = (function () {
             imports: [common_1.CommonModule, forms_1.FormsModule],
             declarations: [contact_us_component_1.ContactUsComponent],
             exports: [contact_us_component_1.ContactUsComponent],
-            providers: []
+            providers: [contact_service_1.ContactService]
         }), 
         __metadata('design:paramtypes', [])
     ], ContactModule);

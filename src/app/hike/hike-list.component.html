@@ -3,5 +3,5 @@
     Filtrer par: <input type="text" [(ngModel)]="searchTerm" placeholder="mots clés..." />
 </div>
 <div *ngFor="let hike of hikes | hikeFilter:searchTerm" >
-    <a [routerLink]="['/hikes',hike.id]">{{hike.name}}</a>
+    <hike-summary [hike]="hike" (addHikeAsFavorite)="addToMyTodoHike($event)"></hike-summary>
 </div>
