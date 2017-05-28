@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var hide_service_1 = require('./hide.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var hide_service_1 = require("./hide.service");
 var HikeListComponent = (function () {
     function HikeListComponent(_hikeService) {
         this._hikeService = _hikeService;
@@ -23,15 +24,15 @@ var HikeListComponent = (function () {
     HikeListComponent.prototype.addToMyTodoHike = function (hikeToAdd) {
         console.log(hikeToAdd);
     };
-    HikeListComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'hike-list',
-            templateUrl: 'hike-list.component.html'
-        }), 
-        __metadata('design:paramtypes', [hide_service_1.HikeService])
-    ], HikeListComponent);
     return HikeListComponent;
 }());
+HikeListComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'hike-list',
+        templateUrl: 'hike-list.component.html'
+    }),
+    __metadata("design:paramtypes", [hide_service_1.HikeService])
+], HikeListComponent);
 exports.HikeListComponent = HikeListComponent;
 //# sourceMappingURL=hike-list.component.js.map

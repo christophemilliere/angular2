@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var HikeDetailsComponent = (function () {
     function HikeDetailsComponent(_route, _router) {
         this._route = _route;
@@ -22,15 +23,15 @@ var HikeDetailsComponent = (function () {
     HikeDetailsComponent.prototype.goBack = function () {
         this._router.navigate(['/hikes']);
     };
-    HikeDetailsComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'hike-details',
-            templateUrl: 'hike-details.component.html'
-        }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
-    ], HikeDetailsComponent);
     return HikeDetailsComponent;
 }());
+HikeDetailsComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'hike-details',
+        templateUrl: 'hike-details.component.html'
+    }),
+    __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router])
+], HikeDetailsComponent);
 exports.HikeDetailsComponent = HikeDetailsComponent;
 //# sourceMappingURL=hike-details.component.js.map

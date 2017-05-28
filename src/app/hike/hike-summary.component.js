@@ -8,7 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var hike_1 = require("./hike");
 var HikeSummaryComponent = (function () {
     function HikeSummaryComponent() {
@@ -19,23 +20,22 @@ var HikeSummaryComponent = (function () {
             this.addHikeAsFavorite.emit(this.hike);
         }
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', hike_1.Hike)
-    ], HikeSummaryComponent.prototype, "hike", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], HikeSummaryComponent.prototype, "addHikeAsFavorite", void 0);
-    HikeSummaryComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'hike-summary',
-            templateUrl: 'hike-summary.component.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], HikeSummaryComponent);
     return HikeSummaryComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", hike_1.Hike)
+], HikeSummaryComponent.prototype, "hike", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], HikeSummaryComponent.prototype, "addHikeAsFavorite", void 0);
+HikeSummaryComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'hike-summary',
+        templateUrl: 'hike-summary.component.html'
+    })
+], HikeSummaryComponent);
 exports.HikeSummaryComponent = HikeSummaryComponent;
 //# sourceMappingURL=hike-summary.component.js.map

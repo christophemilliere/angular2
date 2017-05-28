@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var contact_service_1 = require('./contact.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var contact_service_1 = require("./contact.service");
 var ContactUsComponent = (function () {
     function ContactUsComponent(_contactService) {
         this._contactService = _contactService;
@@ -18,14 +19,14 @@ var ContactUsComponent = (function () {
     ContactUsComponent.prototype.sendMessage = function (form) {
         this._contactService.postContactForm(form.value);
     };
-    ContactUsComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            templateUrl: 'contact-us.template.html'
-        }), 
-        __metadata('design:paramtypes', [contact_service_1.ContactService])
-    ], ContactUsComponent);
     return ContactUsComponent;
 }());
+ContactUsComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        templateUrl: 'contact-us.template.html'
+    }),
+    __metadata("design:paramtypes", [contact_service_1.ContactService])
+], ContactUsComponent);
 exports.ContactUsComponent = ContactUsComponent;
 //# sourceMappingURL=contact-us.component.js.map

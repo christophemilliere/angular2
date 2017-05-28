@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
 // import { Hike } from './hike';
-require('rxjs/add/operator/map');
-require('rxjs/add/operator/do');
+require("rxjs/add/operator/map");
+require("rxjs/add/operator/do");
 var HikeService = (function () {
     function HikeService(_http) {
         this._http = _http;
@@ -25,11 +26,11 @@ var HikeService = (function () {
             .do(function (x) { return console.log(x); })
             .map(function (hikes) { return hikes.json(); });
     };
-    HikeService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], HikeService);
     return HikeService;
 }());
+HikeService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], HikeService);
 exports.HikeService = HikeService;
 //# sourceMappingURL=hide.service.js.map
