@@ -11,6 +11,7 @@ var common_1 = require("@angular/common");
 var forms_1 = require("@angular/forms");
 var map_component_1 = require("./map.component");
 var core_2 = require("angular2-google-maps/core");
+var map_service_1 = require("./map.service");
 var MapModule = (function () {
     function MapModule() {
     }
@@ -22,11 +23,11 @@ MapModule = __decorate([
             common_1.CommonModule,
             forms_1.FormsModule,
             core_2.AgmCoreModule.forRoot({
-                apiKey: "AIzaSyAFMvVm9A2hHdd1So5Ngzi11xL1eN4b8w4"
+                apiKey: 'AIzaSyAFMvVm9A2hHdd1So5Ngzi11xL1eN4b8w4'
             })
         ],
-        declarations: [map_component_1.MapComponent],
-        providers: [],
+        providers: [map_service_1.MapService],
+        declarations: [map_component_1.MapComponent]
     })
 ], MapModule);
 exports.MapModule = MapModule;

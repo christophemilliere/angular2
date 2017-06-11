@@ -14,12 +14,13 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import {ContactModule } from './contact/contact.module';
 import { ContactUsComponent } from './contact/contact-us.component';
 import { MapModule } from './map/map.module';
+import { MapComponent } from './map/map.component';
 
 
 @NgModule({
-  imports:      [ BrowserModule, 
-                  HikeModule, 
-                  HttpModule, 
+  imports:      [ BrowserModule,
+                  HikeModule,
+                  HttpModule,
                   HomeModule,
                   ContactModule,
                   BrowserAnimationsModule,
@@ -29,7 +30,7 @@ import { MapModule } from './map/map.module';
                     { path: 'hikes', component: HikeListComponent },
                     { path: 'hikes/:id', component: HikeDetailsComponent },
                     { path: 'contact', component: ContactUsComponent },
-                    { path: 'map', component: MapModule },
+                    { path: 'map', component: MapComponent },
                     { path: '', redirectTo: 'home', pathMatch: 'full' },
                     { path: '**', component: PageNotFoundComponent }
                   ])],

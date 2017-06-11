@@ -21,6 +21,7 @@ var page_not_found_component_1 = require("./page-not-found.component");
 var contact_module_1 = require("./contact/contact.module");
 var contact_us_component_1 = require("./contact/contact-us.component");
 var map_module_1 = require("./map/map.module");
+var map_component_1 = require("./map/map.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -40,7 +41,7 @@ AppModule = __decorate([
                 { path: 'hikes', component: hike_list_component_1.HikeListComponent },
                 { path: 'hikes/:id', component: hike_details_component_1.HikeDetailsComponent },
                 { path: 'contact', component: contact_us_component_1.ContactUsComponent },
-                { path: 'map', component: map_module_1.MapModule },
+                { path: 'map', component: map_component_1.MapComponent },
                 { path: '', redirectTo: 'home', pathMatch: 'full' },
                 { path: '**', component: page_not_found_component_1.PageNotFoundComponent }
             ])],
