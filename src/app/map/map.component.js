@@ -19,6 +19,8 @@ var MapComponent = (function () {
         this.lng = -1.43276;
         this.startingPoint = 'La ville Ollivier, 35140 Mézières-sur-Couesnon, France';
         this.markers = [];
+        this.markersFromCoords = [];
+        this.pointsForPolyline = [];
     }
     MapComponent.prototype.onCoordMarkerDropped = function (event) {
         this.markerWasDropped = true;
@@ -36,8 +38,27 @@ var MapComponent = (function () {
             title: '',
             draggable: true
         };
+        if (this.pointsForPolyline.length === 0) {
+            this.pointsForPolyline.push({ lat: marker.lat, lng: marker.lng });
+        }
         this.markers.push(marker);
         this._applicationRef.tick();
+    };
+    MapComponent.prototype.addMarkerByCoords = function (formValue, e) {
+        e.preventDefault();
+        var marker = { lat: 0, lng: 0, draggable: false, icon: '', title: '' };
+        marker.lat = parseFloat(formValue.markerByCoordsLat);
+        marker.lng = parseFloat(formValue.markerByCoordsLng);
+        marker.icon = 'app/map/images/greenmarker.png';
+        this.markersFromCoords.push(marker);
+    };
+    MapComponent.prototype.updatePolyline = function (event) {
+        var droppedLatForPolyline = parseFloat(event.coords.lat);
+        var droppedLngForPolyline = parseFloat(event.coords.lng);
+        this.pointsForPolyline.push({ lat: droppedLatForPolyline, lng: droppedLngForPolyline });
+    };
+    MapComponent.prototype.deletePolyline = function () {
+        this.pointsForPolyline = [];
     };
     return MapComponent;
 }());

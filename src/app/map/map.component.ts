@@ -5,7 +5,7 @@ import { MapService } from './map.service';
     moduleId: module.id,
     selector: 'hike-map',
     templateUrl: 'map.component.html',
-    styleUrls:['map.component.css']
+    styleUrls: ['map.component.css']
 })
 export class MapComponent {
     lat: number = 48.30740;
@@ -15,6 +15,8 @@ export class MapComponent {
     markerWasDropped: boolean;
     startingPoint: string = 'La ville Ollivier, 35140 Mézières-sur-Couesnon, France';
     markers: marker[] = [];
+    markersFromCoords: marker[] = [];
+    pointsForPolyline: coord[] = [];
 
     constructor(private _mapService: MapService, private _applicationRef: ApplicationRef) {
 
@@ -39,8 +41,29 @@ export class MapComponent {
             title: '',
             draggable: true
         }
+        if( this.pointsForPolyline.length === 0 ) {
+            this.pointsForPolyline.push( { lat: marker.lat, lng: marker.lng } );
+        }
         this.markers.push(marker);
         this._applicationRef.tick();
+    }
+    addMarkerByCoords(formValue: any,  e: any) {
+        e.preventDefault();
+        let marker = { lat: 0, lng: 0, draggable: false, icon: '', title: '' };
+        marker.lat = parseFloat(formValue.markerByCoordsLat);
+        marker.lng = parseFloat(formValue.markerByCoordsLng);
+        marker.icon = 'app/map/images/greenmarker.png';
+        this.markersFromCoords.push(marker);
+    }
+
+    updatePolyline(event: any) {
+        let droppedLatForPolyline = parseFloat(event.coords.lat);
+        let droppedLngForPolyline = parseFloat(event.coords.lng);
+        this.pointsForPolyline.push({lat: droppedLatForPolyline, lng: droppedLngForPolyline});
+    }
+
+    deletePolyline() {
+        this.pointsForPolyline = [];
     }
 }
 
@@ -50,4 +73,9 @@ interface marker {
     title?: string;
     icon?: string;
     draggable: boolean;
+}
+
+interface coord {
+    lat: number;
+    lng: number;
 }
